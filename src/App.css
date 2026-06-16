@@ -1,0 +1,84 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- LIGHT THEME (the base look) ---------- */
+.app {
+  background: #f6f7fb;
+  color: #1a1a2e;
+}
+
+.container {
+  flex: 1;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 48px 20px;
+}
+
+/* ---------- DARK & MODERN THEME ----------
+   When the wrapper has the "dark" class, we paint a deep gradient
+   background and turn the cards into "glass". */
+.app.dark {
+  background:
+    radial-gradient(900px 500px at 80% -10%, rgba(108, 140, 255, 0.18), transparent),
+    radial-gradient(800px 500px at 0% 10%, rgba(166, 108, 255, 0.14), transparent),
+    #0b0b14;
+  color: #e8e8f5;
+}
+
+.app.dark .navbar {
+  background: rgba(11, 11, 20, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.app.dark .card,
+.app.dark .demo-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #e8e8f5;
+  backdrop-filter: blur(6px);
+}
+
+.app.dark input,
+.app.dark textarea {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.app.dark .footer {
+  background: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ---------- ANIMATED AURORA BACKGROUND (dark only) ---------- */
+.app.dark::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(600px 400px at 20% 18%, rgba(108, 140, 255, 0.16), transparent),
+    radial-gradient(600px 400px at 82% 60%, rgba(166, 108, 255, 0.14), transparent);
+  animation: drift 14s ease-in-out infinite alternate;
+  pointer-events: none;   /* you can still click through it */
+  z-index: 0;
+}
+@keyframes drift {
+  from { transform: translateY(0) scale(1); }
+  to   { transform: translateY(-30px) scale(1.05); }
+}
+
+/* Keep the real content above the aurora layer */
+.navbar { position: sticky; z-index: 10; }
+.container { position: relative; z-index: 1; }
+.footer { position: relative; z-index: 1; }
+
+/* Nicer glow when hovering a card in dark mode */
+.app.dark .card:hover {
+  border-color: rgba(138, 162, 255, 0.5);
+  box-shadow: 0 12px 40px rgba(108, 140, 255, 0.18);
+}

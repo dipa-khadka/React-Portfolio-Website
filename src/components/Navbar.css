@@ -1,0 +1,66 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 14px 28px;
+  background: #1a1a2e;
+  position: sticky;   /* stays on top while scrolling */
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  color: #fff;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+.logo .amp {
+  background: linear-gradient(135deg, #8aa2ff, #c08cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0 2px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.nav-links a { color: #c9c9e0; font-weight: 500; font-size: 15px; }
+.nav-links a:hover { color: #fff; }
+.nav-links a.active {           /* the current page */
+  color: #fff;
+  border-bottom: 2px solid #8aa2ff;
+  padding-bottom: 2px;
+}
+
+.theme-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.theme-btn:hover { background: rgba(255, 255, 255, 0.2); }
+
+/* Red "Portfolio" word in the logo */
+.logo .amp {
+  background: linear-gradient(135deg, #8aa2ff, #c08cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0 2px;
+}
+.logo .logo-portfolio {
+  color: #ff3b3b;
+  -webkit-text-fill-color: #ff3b3b;   /* forces solid red over any gradient */
+  background: none;
+  font-weight: 600;
+  margin-left: 4px;
+}

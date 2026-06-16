@@ -1,0 +1,289 @@
+/* Soft fade + slide up when a page opens */
+.page { animation: fadeIn 0.45s ease; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.page h1 { font-size: 36px; margin-bottom: 10px; }
+.lead { color: #555; margin-bottom: 26px; font-size: 17px; }
+.app.dark .lead { color: #a8a8c0; }
+
+.eyebrow {
+  color: #6c8cff;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+/* Gradient text used on the hero name */
+.accent {
+  background: linear-gradient(135deg, #8aa2ff, #c08cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- HERO (Home) ---------- */
+.hero { text-align: center; padding-top: 40px; }
+.hero h1 { font-size: 52px; line-height: 1.1; }
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+.visitor-chip {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 14px;
+  background: rgba(108, 140, 255, 0.12);
+  border: 1px solid rgba(108, 140, 255, 0.3);
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #6c8cff, #a66cff);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(108, 140, 255, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(108, 140, 255, 0.5);
+}
+.btn-outline {
+  background: transparent;
+  border: 1px solid rgba(108, 140, 255, 0.6);
+  color: #6c8cff;
+  box-shadow: none;
+}
+.app.dark .btn-outline { color: #8aa2ff; }
+
+/* ---------- CARDS ---------- */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.card:hover { transform: translateY(-4px); }
+.app.dark .card:hover { border-color: rgba(138, 162, 255, 0.4); }
+
+/* ---------- ABOUT ---------- */
+.team {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin: 10px 0 34px;
+}
+.team .member { flex: 1; min-width: 180px; text-align: center; }
+.avatar {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 700;
+  font-family: 'Space Grotesk', sans-serif;
+  color: #fff;
+  background: linear-gradient(135deg, #6c8cff, #a66cff);
+}
+.section-title { margin-bottom: 14px; }
+.learned-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  list-style: none;
+}
+.learned-list li {
+  background: #eaeeff;
+  color: #3a4ba0;
+  padding: 11px 14px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+.app.dark .learned-list li {
+  background: rgba(138, 162, 255, 0.12);
+  color: #c2cbff;
+}
+
+/* ---------- PROJECTS GRID ---------- */
+.grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+@media (min-width: 640px) { .grid { grid-template-columns: 1fr 1fr; } }
+
+/* ---------- PROJECT DETAIL ---------- */
+.back-link {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #6c8cff;
+  font-weight: 600;
+}
+.app.dark .back-link { color: #8aa2ff; }
+.detail-head { display: flex; align-items: center; gap: 14px; }
+.detail-emoji { font-size: 40px; }
+
+/* ---------- SKILLS ---------- */
+.skills-card { display: flex; flex-direction: column; gap: 20px; }
+.skill-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 15px;
+}
+.skill-track {
+  height: 10px;
+  border-radius: 6px;
+  background: rgba(120, 120, 150, 0.2);
+  overflow: hidden;
+}
+.skill-fill {
+  height: 100%;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #6c8cff, #a66cff);
+  transition: width 1s ease;   /* this makes the bar animate */
+}
+
+/* ---------- CONTACT ---------- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 460px;
+}
+.contact-form label { font-weight: 600; margin-top: 8px; }
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 15px;
+}
+.contact-form .btn { margin-top: 14px; }
+.saved-msg { margin-top: 20px; max-width: 460px; }
+
+/* ---------- TYPING LINE (Home) ---------- */
+.type-line {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 6px 0 18px;
+  color: #555;
+}
+.app.dark .type-line { color: #c0c0d8; }
+.type-text {
+  background: linear-gradient(135deg, #8aa2ff, #c08cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+.cursor {
+  color: #8aa2ff;
+  -webkit-text-fill-color: #8aa2ff;
+  animation: blink 0.8s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ---------- STATS ROW (Home) ---------- */
+.stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 36px 0 10px;
+}
+.stat {
+  min-width: 110px;
+  padding: 18px 20px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(120, 120, 150, 0.18);
+}
+.app.dark .stat { border-color: rgba(255, 255, 255, 0.08); }
+.stat-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #6c8cff, #a66cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.stat-label { font-size: 13px; color: #888; margin-top: 4px; }
+.app.dark .stat-label { color: #a0a0b8; }
+
+/* ===== RED ACCENT + HEADING UNDERLINE (all pages) ===== */
+.page > h1 { position: relative; display: inline-block; }
+.page > h1::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 54px;
+  height: 4px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #6c8cff, #ff5c72);
+}
+
+/* ===== ABOUT upgrade ===== */
+.role { color: #ff5c72; font-weight: 600; font-size: 14px; margin-top: 4px; }
+.member-id { font-size: 13px; opacity: 0.8; margin-top: 2px; }
+.learn-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #eaeeff;
+  color: #3a4ba0;
+  padding: 11px 14px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+.app.dark .learn-item { background: rgba(138, 162, 255, 0.12); color: #c2cbff; }
+.check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  flex: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff5c72, #a66cff);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* ===== SKILLS upgrade ===== */
+.skill-fill { background: linear-gradient(90deg, #6c8cff, #a66cff, #ff5c72); }
+.skill-name { display: flex; align-items: center; gap: 8px; }
+.skill-icon { font-size: 17px; }
+.skill-pct { color: #8aa2ff; font-weight: 600; }
+.skill-tag {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 11px;
+  font-weight: 600;
+}
+.skill-tag.advanced { background: rgba(255, 92, 114, 0.15); color: #d6455e; }
+.skill-tag.intermediate { background: rgba(108, 140, 255, 0.15); color: #5566cc; }
+.skill-tag.beginner { background: rgba(140, 140, 160, 0.18); color: #888; }

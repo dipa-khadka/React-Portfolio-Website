@@ -1,0 +1,47 @@
+.project-card {
+  display: block;
+  color: inherit;
+}
+.project-emoji { font-size: 34px; margin-bottom: 8px; }
+
+.project-card .tags {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tag {
+  background: #eaeeff;
+  color: #3a4ba0;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+.app.dark .tag {
+  background: rgba(138, 162, 255, 0.15);
+  color: #b8c2ff;
+}
+
+.view-link {
+  display: inline-block;
+  margin-top: 14px;
+  font-weight: 600;
+  color: #6c8cff;
+  font-size: 14px;
+}
+.app.dark .view-link { color: #8aa2ff; }
+
+/* Gradient top strip (with red) + red glow on hover */
+.project-card { position: relative; overflow: hidden; }
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #6c8cff, #a66cff, #ff5c72);
+}
+.app.dark .project-card:hover {
+  box-shadow: 0 12px 40px rgba(255, 92, 114, 0.16);
+}
